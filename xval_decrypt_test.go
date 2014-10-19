@@ -7,7 +7,7 @@ const consoleSerialNumber = "031897772807"
 func TestThatConsoleIsBanned(t *testing.T) {
 	xval := "DA9C-DC84-43A9-BB4C"
 
-	_, decryptedXVal, err := DecryptXVal(consoleSerialNumber, xval)
+	_, decryptedXVal, err := Decrypt(consoleSerialNumber, xval)
 
 	if err != nil {
 		t.Error(err)

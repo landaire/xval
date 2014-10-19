@@ -48,7 +48,7 @@ func getFlagDescriptions() map[int32]string {
 
 // Decrypt returns the decryption key, decrypted xval data, and an error
 // which shows whether or not the decryption was successful.
-func DecryptXVal(serial, xval string) ([]byte, []byte, error) {
+func Decrypt(serial, xval string) ([]byte, []byte, error) {
 	if strings.Contains(xval, "-") {
 		xval = strings.Replace(xval, "-", "", -1)
 	}
