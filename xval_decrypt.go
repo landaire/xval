@@ -1,3 +1,4 @@
+// Package xval provides a method for decrypting Xbox 360 X-value data.
 package xval
 
 import (
@@ -45,6 +46,8 @@ func getFlagDescriptions() map[int32]string {
 	}
 }
 
+// Decrypt returns the decryption key, decrypted xval data, and an error
+// which shows whether or not the decryption was successful.
 func DecryptXVal(serial, xval string) ([]byte, []byte, error) {
 	if strings.Contains(xval, "-") {
 		xval = strings.Replace(xval, "-", "", -1)
@@ -74,6 +77,8 @@ func DecryptXVal(serial, xval string) ([]byte, []byte, error) {
 	return desKey, xvalAsHex, nil
 }
 
+// TextResult returns an array of descriptive messages for each
+// flag in the dec
 func TextResult(dec []byte) []string {
 	var result []string
 
